@@ -13,6 +13,7 @@ main = do handle <- openFile "input" ReadMode
           putStr "\n"
           return ()
 
+ord' :: Char -> Int
 ord' x
     | isLower x = ord x - 96
     | isUpper x = ord x - 38
@@ -38,6 +39,7 @@ task1 = (sum . map (getCommon . map (sort . map ord') . halve))
         getCommon :: (Num a, Ord a) => [[a]] -> a
         getCommon [xs, ys] = head (intersectSorted xs ys)
 
+--shamelessly stolen from stackoverflow
 intersectSorted :: (Num a, Ord a) => [a] -> [a] -> [a]
 intersectSorted (x:xs) (y:ys)
  | x == y    = x : intersectSorted xs ys
