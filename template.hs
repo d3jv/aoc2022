@@ -10,9 +10,9 @@ main = do handle <- openFile "input" ReadMode
           putStr "\n"
           return ()
 
-task1 :: [String]
+task1 :: [String] -> Int
 task1 = undefined
 
-task2 :: [String]
+task2 :: [String] -> Int
 task2 = undefined
 
